@@ -1,54 +1,54 @@
 <html>
-	<head>
-	    <title>Mis Predios Mapas</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-		<link rel="stylesheet" href="../css/normalize.css"/>
-		<link rel="stylesheet" href="../css/main.css"/>
-		<script type="text/javascript" src="../lib/modernizr.custom.54459.js"></script>
-		<script type="text/javascript" src="../lib/jquery/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript" src="../lib/jquery-ui-1.10.4.custom.min.js"></script>
-		<script type="text/javascript" src="../js/main.js"></script>
-		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	</head>
-	<body>
-		<header>
-		<div class="header-cabecera-verde">
-			<div class="regresar">
-				<a id="btn-regresar-mis-predios-mapas" class="icon-flecha-izq" href="#"></a>
-			</div>
-			<div class="titulo">
-				<h1 class="header-titulo">
-					Oficina Móvil de Catastro
-				</h1>
-			</div>
-			<div class="botonera">
-				<a id="btn-cerrar"class="icon-cerrar" href="#"></a>
-			</div>		
+<head>
+    <title>Mis Predios Mapas</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="../css/normalize.css"/>
+	<link rel="stylesheet" href="../css/main.css"/>
+	<script type="text/javascript" src="../lib/modernizr.custom.54459.js"></script>
+	<script type="text/javascript" src="../lib/jquery/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../lib/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+</head>
+<body>
+	<header>
+	<div class="header-cabecera-verde">
+		<div class="regresar">
+			<a id="btn-regresar-mis-predios-mapa" class="icon-flecha-izq" href="#"></a>
 		</div>
-		<div class="header-cabecera-roja">
+		<div class="titulo">
+			<h1 class="header-titulo">
+				Oficina Móvil de Catastro
+			</h1>
+		</div>
+		<div class="botonera">
+			<a id="btn-cerrar"class="icon-cerrar" href="#"></a>
+		</div>		
+	</div>
+	<div class="header-cabecera-roja">
+		<ul>
+			<li class="primero"><a class="icon-info iconoGrande" href="#"></a></li>
+			<li class="segundo">
+				<a href="#">Mis Predios
+			 		<div class="triangulo">	</div>
+			 	</a>
+			 </li>
+			<li class="tercero"><a class="icon-estrella iconoGrande" href="#"></a></li>
+		</ul>
+	</div>
+</header>
+<section class="area-body">
+	<div id="map_canvas"></div>
+</section>
+<footer class="area-footer">
+		<div class="footer-mispredios">
 			<ul>
-				<li class="primero"><a class="icon-info iconoGrande" href="#"></a></li>
-				<li class="segundo">
-					<a href="#">Mis Predios
-				 		<div class="triangulo">	</div>
-				 	</a>
-				 </li>
-				<li class="tercero"><a class="icon-estrella iconoGrande" href="#"></a></li>
+				<li ><a class="icon-tramites iconoGrande" href="predios.html">  Lista</a></li>
+				<li ><a class="icon-mapa iconoGrande" href="#">  Mapa</a></li>
 			</ul>
-		</div>
-	</header>
-	<section class="area-body">
-		<div id="map_canvas"></div>
-	</section>
-	<footer class="area-footer">
-			<div class="footer-mispredios">
-				<ul>
-					<li ><a class="icon-tramites iconoGrande" href="predios.html">  Lista</a></li>
-					<li ><a class="icon-mapa iconoGrande" href="#">  Mapa</a></li>
-				</ul>
-		    </div>
-	</footer>
-	<script src="../js/geolocalizacion.js"></script>
+	    </div>
+</footer>
+<script src="../js/geolocalizacion.js"></script>
 </body>
 </html>

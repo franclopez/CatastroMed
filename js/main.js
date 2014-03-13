@@ -15,9 +15,11 @@ var opcionesHome = ['ayuda','certificados','consultas','informacion','notificaci
 var opcionesInformacion = ['mapas','indicadores','noticias','novedades'];
 var opcionesConsulta = ['predios','mis_predios','mis_tramites','puntos_atencion'];
 
+var regresarHome = ['ayuda','certificados','consultas','informacion','notificaciones','tramites'];
 var regresarAyuda = ['mapas','noticias','indicadores','novedades'];
 var regresarConsultas = ['predios','mis-predios','mis-tramites','puntos-atencion'];
-var regresarConsultasPredios = ['predios-detalle','predios-filtro'];
+var regresarConsultasPredios = ['predios-detalle'];
+var regresarConsultasPrediosL = ['predios-filtro'];
 var regresarConsultasMisPredios = ['mis-predios-detalle','mis-predios-mapa'];
 var regresarConsultasMisTramites = [];
 var regresarConsultasPuntosAtencion = [];
@@ -40,6 +42,15 @@ function navegar(opciones, destino, fuente){
 
 }
 
+function eleccionListaMapa(){
+	var mis_predios = new RegExp('(mis_predios.html)?');
+	if (mis_predios.test(document.URL)){
+		ocultaMapa();
+	}
+}
+function ocultaMapa(){
+	$('#map_canvas').hide();
+}
 
 $(function(){
 
@@ -47,11 +58,13 @@ $(function(){
 	$("#home_main").sortable();
 	//$("#home_main").disableSelection()
 	/**/
-	
+	$(document).ready(function(){
+		eleccionListaMapa();
+	});
 
 	opcionesHome.forEach(function(opcion){
 		var link = '#home_'+opcion;
-		var destino = 'plantillas/'+opcion+'.html';
+		var destino = 'Plantillas/'+opcion+'.html';
 		$(link)
 		.click(function(){
 			location.href = destino;
@@ -76,6 +89,15 @@ $(function(){
 		});
 	});
 
+	regresarHome.forEach(function(opcion){
+		var link = '#btn-regresar-'+opcion;
+		var destino = '../index.html';
+		$(link)
+		.click(function(){
+			location.href = destino;
+		});
+	});
+
 	regresarAyuda.forEach(function(opcion){
 		var link = '#btn-regresar-'+opcion;
 		var destino = 'informacion.html';
@@ -94,4 +116,41 @@ $(function(){
 		});
 	});
 
+	regresarConsultasPredios.forEach(function(opcion){
+		var link = '#btn-regresar-'+opcion;
+		var destino = 'predios_filtro.html';
+		$(link)
+		.click(function(){
+			location.href = destino;
+		});
+	});
+
+	regresarConsultasPrediosL.forEach(function(opcion){
+		var link = '#btn-regresar-'+opcion;
+		var destino = 'predios.html';
+		$(link)
+		.click(function(){
+			location.href = destino;
+		});
+	});
+	regresarConsultasMisPredios.forEach(function(opcion){
+		var link = '#btn-regresar-'+opcion;
+		var deatino = 'mis_predios.html';
+		$(link)
+		.click(function(){
+			location.href = destino;
+		});
+	});
+
+	$('#btn-mis-predios-vista-mapa')
+	.click(function(){
+		$('#lista_mis_predios').hide();
+		$('#map_canvas').show();
+	});
+	
+	$('#btn-mis-predios-vista-lista')
+	.click(function(){
+		$('#map_canvas').hide();
+		$('#lista_mis_predios').show();
+	});
 });
